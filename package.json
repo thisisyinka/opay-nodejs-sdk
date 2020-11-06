@@ -1,0 +1,16 @@
+{
+  "name": "opay-nodejs-sdk",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:thisisyinka/opay-nodejs-sdk.git",
+  "author": "Layinka Jaji <layinkawebdev@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "got": "^9.3.2",
+    "lodash": "^4.17.20",
+    "nodemon": "^2.0.6"
+  },
+  "devDependencies": {
+    "dotenv": "^8.2.0"
+  }
+}
