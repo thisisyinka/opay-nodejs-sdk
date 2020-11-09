@@ -1,4 +1,9 @@
 'use strict'
 
-const got = require('got');
-const _ = require('lodash');
+const transfers = require('../apis/transfers');
+const checkout = require('../apis/checkout');
+
+const allEndpoints = {
+    transfers,
+    checkout
+}
