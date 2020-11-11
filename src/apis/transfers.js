@@ -1,14 +1,12 @@
 'use strict'
 
-const sandboxURL = `http://sandbox.cashierapi.operapay.com/api/v3`;
-
 module.exports = {
     /**
      * Transfer to Wallet
      */
     transferToWallet: {
         method: 'post',
-        path: `${sandboxURL}/transfer/toWallet`,
+        path: `/v3/transfer/toWallet`,
         params: ['merchantid*', 'content-type', 'authorization*'],
         default_params: {'content-type': 'application/json'},
     },
@@ -18,7 +16,7 @@ module.exports = {
      */
     walletTransferStatus: {
         method: 'post',
-        path: `${sandboxURL}/transfer/status/toWallet`,
+        path: `/v3/transfer/status/toWallet`,
         params: ['merchantid*', 'content-type', 'authorization*'],
         default_params: {'content-type': 'application/json'},
     },
@@ -28,7 +26,7 @@ module.exports = {
      */
     getBanks: {
         method: 'post',
-        path: `${sandboxURL}/banks`,
+        path: `/v3/banks`,
         params: ['merchantid*', 'content-type', 'authorization*'],
         default_params: {'content-type': 'application/json', countryCode: 'NG'},
     },
@@ -38,7 +36,7 @@ module.exports = {
      */
     transferToBank: {
         method: 'post',
-        path: `${sandboxURL}/transfer/toBank`,
+        path: `/v3/transfer/toBank`,
         params: ['merchantid*', 'content-type', 'authorization*'],
         default_params: {'content-type': 'application/json'},
     },
@@ -48,7 +46,7 @@ module.exports = {
      */
     bankTransferStatus: {
         method: 'post',
-        path: `${sandboxURL}/transfer/status/toBank`,
+        path: `/v3/transfer/status/toBank`,
         params: ['merchantid*', 'content-type', 'authorization*'],
         default_params: {'content-type': 'application/json'},
     }
