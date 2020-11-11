@@ -8,7 +8,7 @@ module.exports = {
      */
     initializeTransaction: {
         method: 'post',
-        path: `${sandboxURL}/cashier/initialize`,
+        path: `/v3/cashier/initialize`,
         params: ['merchantid*', 'content-type', 'authorization*'],
         body: {
             "reference": "test_20191123132233",
@@ -33,7 +33,7 @@ module.exports = {
      */
     cashierStatus: {
         method: 'post',
-        path: `${sandboxURL}/cashier/status`,
+        path: `/v3/cashier/status`,
         params: ['content-type', 'authorization*', 'merchantid*'],
         body: {
             "orderNo": "20019212912901281821982",
@@ -47,7 +47,7 @@ module.exports = {
      */
     closeStatus: {
         method: 'post',
-        path: `${sandboxURL}/cashier/close`,
+        path: `/v3/cashier/close`,
         params: ['content-type', 'authorization*', 'merchantid*'],
         body: {
             "orderNo": "20019212912901281821982",

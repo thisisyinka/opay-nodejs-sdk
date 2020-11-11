@@ -1,14 +1,12 @@
 'use strict'
 
-const sandboxURL = `http://sandbox.cashierapi.operapay.com/api/v3`;
-
 module.exports = {
     /**
      * Validate OPay User
      */
     validateUser: {
         method: 'post',
-        path: `${sandboxURL}/info/user`,
+        path: `/v3/info/user`,
         params: ['merchantid*', 'content-type', 'authorization*'],
         body: {
             "phoneNumber": "+2349876543210"
@@ -21,7 +19,7 @@ module.exports = {
      */
     validateMerchant: {
         method: 'post',
-        path: `${sandboxURL}/info/merchant`,
+        path: `/v3/info/merchant`,
         params: ['merchantid*', 'content-type', 'authorization*'],
         body: {
             "phoneNumber": "+2349876543210"
@@ -34,7 +32,7 @@ module.exports = {
      */
     validateMerchant: {
         method: 'post',
-        path: `${sandboxURL}/verification/accountNumber/resolve`,
+        path: `/v3/verification/accountNumber/resolve`,
         params: ['merchantid*', 'content-type', 'authorization*'],
         body: {
             "bankCode": "105100005",
