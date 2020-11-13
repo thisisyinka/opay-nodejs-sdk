@@ -22,7 +22,7 @@ class OPay {
         const environment = /^(?:development|dev)$/
 
     this.httpOptions = {
-        baseURL: environment.test(appEnv) ? `${apiPrefix.sandbox}/cashier/initialize` : `${apiPrefix.production}/cashier/initialize`,
+        baseURL: environment.test(appEnv) ? `${apiPrefix.sandbox}` : `${apiPrefix.production}`,
         headers: {
             'Content-Type': 'application/json',
             'MerchantId': `${merchantId}`,
