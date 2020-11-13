@@ -1,5 +1,7 @@
 'use strict'
 
+/*** With help from Stitchng */
+
 const got = require('got');
 
 const transfers = require('../apis/transfers');
