@@ -6,7 +6,7 @@ module.exports = {
    */
   queryBalance: {
     method: 'post',
-    path: `/balances`,
+    path: `balances`,
     authorization: 'PUBLIC_KEY',
     body: null,
   },
@@ -16,9 +16,9 @@ module.exports = {
    */
   validateUser: {
     method: 'post',
-    path: `/info/user`,
+    path: `info/user`,
     authorization: 'PUBLIC_KEY',
-    body: { phoneNumber: String },
+    body: { phoneNumber$: String },
   },
 
   /**
@@ -26,9 +26,9 @@ module.exports = {
    */
   validateMerchant: {
     method: 'post',
-    path: `/info/merchant`,
+    path: `info/merchant`,
     authorization: 'PUBLIC_KEY',
-    body: { email: String },
+    body: { email$: String },
   },
 
   /**
@@ -36,9 +36,9 @@ module.exports = {
    */
   validateBankAccount: {
     method: 'post',
-    path: `/verification/accountNumber/resolve`,
+    path: `verification/accountNumber/resolve`,
     authorization: 'PUBLIC_KEY',
-    body: { bankCode: String, bankAccountNo: String, countryCode: String },
+    body: { bankCode$: String, bankAccountNo$: String, countryCode$: String },
     default_body: { countryCode: 'NG' },
   },
 };
