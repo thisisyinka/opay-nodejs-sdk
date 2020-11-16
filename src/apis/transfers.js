@@ -10,8 +10,8 @@ module.exports = {
     authorization: 'SIGNATURE',
     body: {
       amount$: String,
-      country$: String,
-      currency$: String,
+      country: String,
+      currency: String,
       reason$: String,
       receiver$: Object,
       'receiver.name$': String,
@@ -31,8 +31,8 @@ module.exports = {
     authorization: 'SIGNATURE',
     body: {
       amount$: String,
-      country$: String,
-      currency$: String,
+      country: String,
+      currency: String,
       reason$: String,
       receiver$: Object,
       'receiver.merchantId$': String,
@@ -60,7 +60,7 @@ module.exports = {
     method: 'post',
     path: `banks`,
     authorization: 'PUBLIC_KEY',
-    body: { countryCode$: String },
+    body: { countryCode: String },
     default_body: { countryCode: 'NG' },
   },
 
