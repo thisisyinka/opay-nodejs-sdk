@@ -6,22 +6,22 @@ module.exports = {
    */
   initializeTransaction: {
     method: 'post',
-    path: `/cashier/initialize`,
+    path: `cashier/initialize`,
     authorization: 'PUBLIC_KEY',
     body: {
-      amount: String,
-      callbackUrl: String,
-      currency: String,
-      expireAt: String,
-      mchShortName: String,
-      payMethods: Array,
-      payTypes: Array,
-      productDesc: String,
-      productName: String,
-      reference: String,
-      returnUrl: String,
-      userPhone: String,
-      userRequestIp: String,
+      amount$: String,
+      callbackUrl$: String,
+      currency$: String,
+      expireAt$: String,
+      mchShortName$: String,
+      payMethods$: Array,
+      payTypes$: Array,
+      productDesc$: String,
+      productName$: String,
+      reference$: String,
+      returnUrl$: String,
+      userPhone$: String,
+      userRequestIp$: String,
     },
   },
 
@@ -30,9 +30,9 @@ module.exports = {
    */
   cashierStatus: {
     method: 'post',
-    path: `/cashier/status`,
+    path: `cashier/status`,
     authorization: 'PUBLIC_KEY',
-    body: { orderNo: String, reference: String },
+    body: { orderNo$: String, reference$: String },
   },
 
   /**
@@ -40,8 +40,8 @@ module.exports = {
    */
   closeStatus: {
     method: 'post',
-    path: `/cashier/close`,
+    path: `cashier/close`,
     authorization: 'PUBLIC_KEY',
-    body: { orderNo: String, reference: String },
+    body: { orderNo$: String, reference$: String },
   },
 };

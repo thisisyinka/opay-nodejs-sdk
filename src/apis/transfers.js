@@ -6,18 +6,18 @@ module.exports = {
    */
   transferToUserWallet: {
     method: 'post',
-    path: `/transfer/toWallet`,
+    path: `transfer/toWallet`,
     authorization: 'SIGNATURE',
     body: {
-      amount: String,
-      country: String,
-      currency: String,
-      reason: String,
-      receiver: Object,
-      'receiver.name': String,
-      'receiver.phoneNumber': String,
-      'receiver.type': String,
-      reference: String,
+      amount$: String,
+      country$: String,
+      currency$: String,
+      reason$: String,
+      receiver$: Object,
+      'receiver.name$': String,
+      'receiver.phoneNumber$': String,
+      'receiver.type$': String,
+      reference$: String,
     },
     default_body: { country: 'NG', currency: 'NGN' },
   },
@@ -27,18 +27,18 @@ module.exports = {
    */
   transferToMerchantWallet: {
     method: 'post',
-    path: `/transfer/toWallet`,
+    path: `transfer/toWallet`,
     authorization: 'SIGNATURE',
     body: {
-      amount: String,
-      country: String,
-      currency: String,
-      reason: String,
-      receiver: Object,
-      'receiver.merchantId': String,
-      'receiver.name': String,
-      'receiver.type': String,
-      reference: String,
+      amount$: String,
+      country$: String,
+      currency$: String,
+      reason$: String,
+      receiver$: Object,
+      'receiver.merchantId$': String,
+      'receiver.name$': String,
+      'receiver.type$': String,
+      reference$: String,
     },
     default_body: { country: 'NG', currency: 'NGN' },
   },
@@ -48,9 +48,9 @@ module.exports = {
    */
   walletTransferStatus: {
     method: 'post',
-    path: `/transfer/status/toWallet`,
+    path: `transfer/status/toWallet`,
     authorization: 'SIGNATURE',
-    body: { orderNo: String, reference: String },
+    body: { orderNo$: String, reference$: String },
   },
 
   /**
@@ -58,9 +58,9 @@ module.exports = {
    */
   getBanks: {
     method: 'post',
-    path: `/banks`,
+    path: `banks`,
     authorization: 'PUBLIC_KEY',
-    body: { countryCode: String },
+    body: { countryCode$: String },
     default_body: { countryCode: 'NG' },
   },
 
@@ -70,7 +70,7 @@ module.exports = {
 
   getCountries: {
     method: 'post',
-    path: `/countries`,
+    path: `countries`,
     authorization: 'PUBLIC_KEY',
     body: null,
   },
@@ -80,18 +80,18 @@ module.exports = {
    */
   transferToBank: {
     method: 'post',
-    path: `/transfer/toBank`,
+    path: `transfer/toBank`,
     authorization: 'SIGNATURE',
     body: {
-      amount: String,
-      country: String,
-      currency: String,
-      reason: String,
-      receiver: Object,
-      'receiver.bankAccountNumber': String,
-      'receiver.bankCode': String,
-      'receiver.name': String,
-      reference: String,
+      amount$: String,
+      country$: String,
+      currency$: String,
+      reason$: String,
+      receiver$: Object,
+      'receiver.bankAccountNumber$': String,
+      'receiver.bankCode$': String,
+      'receiver.name$': String,
+      reference$: String,
     },
     default_body: { country: 'NG', currency: 'NGN' },
   },
@@ -101,8 +101,8 @@ module.exports = {
    */
   bankTransferStatus: {
     method: 'post',
-    path: `/transfer/status/toBank`,
+    path: `transfer/status/toBank`,
     authorization: 'SIGNATURE',
-    body: { orderNo: String, reference: String },
+    body: { orderNo$: String, reference$: String },
   },
 };
