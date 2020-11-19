@@ -6,11 +6,10 @@
   "author": "Layinka Jaji <layinkawebdev@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "got": "^9.3.2",
+    "alphabetize-object-keys": "^3.0.0",
+    "got": "^11.8.0",
     "lodash": "^4.17.20",
     "nodemon": "^2.0.6"
   },
-  "devDependencies": {
-    "dotenv": "^8.2.0"
-  }
+  "devDependencies": {}
 }

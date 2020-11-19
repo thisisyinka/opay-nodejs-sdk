@@ -38,7 +38,7 @@ module.exports = {
     method: 'post',
     path: `verification/accountNumber/resolve`,
     authorization: 'PUBLIC_KEY',
-    body: { bankCode$: String, bankAccountNo$: String, countryCode$: String },
+    body: { bankAccountNo$: String, bankCode$: String, countryCode: String },
     default_body: { countryCode: 'NG' },
   },
 };
