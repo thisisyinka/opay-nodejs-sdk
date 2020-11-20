@@ -1,12 +1,14 @@
-const _ = require('lodash');
+const sortBy = require('lodash.sortby');
+const getKeys = require('lodash.keys');
+const forEach = require('lodash.foreach');
 const crypto = require('crypto');
 
 const sortObjectAlphabetically = (map) => {
-  const keys = _.sortBy(_.keys(map), (a) => {
+  const keys = sortBy(getKeys(map), (a) => {
     return a;
   });
   const newmap = {};
-  _.each(keys, (k) => {
+  forEach(keys, (k) => {
     newmap[k] = map[k];
   });
   return newmap;
