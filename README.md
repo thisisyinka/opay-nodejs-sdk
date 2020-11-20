@@ -37,7 +37,6 @@ Please note that you will need your public key, private/secret key and your merc
 ``` npm install opay ```
 
 ### Usage Examples
-You can get your publicKey and privateKey in from the OPay Merchant dashboard. Go [here](https://open.opayweb.com/) to get your keys.
 ```javascript
 const OPay = require('opay');
 const opay = new OPay(publicKey,  privateKey,  merchantID, appEnv =  'development');
