@@ -2,7 +2,7 @@
 
 module.exports = {
   /**
-   * Validate OPay User
+   * Query Balance
    */
   queryBalance: {
     method: 'post',
