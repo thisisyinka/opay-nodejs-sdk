@@ -1,6 +1,6 @@
 {
   "name": "opay-node",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
   "repository": {
@@ -28,7 +28,9 @@
     "lodash": "^4.17.20",
     "lodash.foreach": "^4.5.0",
     "lodash.isempty": "^4.4.0",
+    "lodash.isobject": "^3.0.2",
     "lodash.keys": "^4.2.0",
+    "lodash.some": "^4.6.0",
     "lodash.sortby": "^4.7.0"
   },
   "devDependencies": {

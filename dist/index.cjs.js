@@ -2,6 +2,8 @@
 
 var got = require('got');
 var _isEmpty = require('lodash.isempty');
+var isObject = require('lodash.isobject');
+var some = require('lodash.some');
 var alphabetizeObjectKeys = require('alphabetize-object-keys');
 var sortBy = require('lodash.sortby');
 var getKeys = require('lodash.keys');
@@ -12,6 +14,8 @@ function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'defau
 
 var got__default = /*#__PURE__*/_interopDefaultLegacy(got);
 var _isEmpty__default = /*#__PURE__*/_interopDefaultLegacy(_isEmpty);
+var isObject__default = /*#__PURE__*/_interopDefaultLegacy(isObject);
+var some__default = /*#__PURE__*/_interopDefaultLegacy(some);
 var alphabetizeObjectKeys__default = /*#__PURE__*/_interopDefaultLegacy(alphabetizeObjectKeys);
 var sortBy__default = /*#__PURE__*/_interopDefaultLegacy(sortBy);
 var getKeys__default = /*#__PURE__*/_interopDefaultLegacy(getKeys);
@@ -334,8 +338,8 @@ const { generatePrivateKey: generatePrivateKey$1, getClientBody: getClientBody$1
 const endpoints = Object.assign({}, checkout, inquiry, transfers);
 
 const isEmpty = (value, defined) => {
-  if (defined && _.isObject(value)) {
-    return !_.some(value, function (value, key) {
+  if (defined && isObject__default['default'](value)) {
+    return !some__default['default'](value, function (value, key) {
       return value !== undefined;
     });
   }
@@ -393,8 +397,8 @@ class OPay {
     this.privateKey = privateKey;
 
     this.base_url = {
-      sandbox: 'http://sandbox-internalapi.opayweb.com',
-      production: 'https://cashierapi.opayweb.com',
+      sandbox: 'http://sandbox-cashierapi.opayweb.com/api/v3/',
+      production: 'https://cashierapi.opayweb.com/api/v3/',
     };
 
     this.httpClientOptions = {
@@ -447,7 +451,7 @@ for (let endpoint in endpoints) {
 
 var OPay_1 = OPay;
 
-OPay_1.prototype.version = '1.0.0';
+OPay_1.prototype.version = '1.0.2';
 
 var opayNodejsSdk = OPay_1;
 

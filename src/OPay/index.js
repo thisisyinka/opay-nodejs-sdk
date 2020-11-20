@@ -1,6 +1,8 @@
 'use strict';
 const got = require('got');
 const _isEmpty = require('lodash.isempty');
+const isObject = require('lodash.isobject');
+const some = require('lodash.some');
 const alphabetizeObjectKeys = require('alphabetize-object-keys');
 
 const checkout = require('../apis/checkout');
@@ -12,8 +14,8 @@ const { generatePrivateKey, getClientBody } = require('../lib/utils');
 const endpoints = Object.assign({}, checkout, inquiry, transfers);
 
 const isEmpty = (value, defined) => {
-  if (defined && _.isObject(value)) {
-    return !_.some(value, function (value, key) {
+  if (defined && isObject(value)) {
+    return !some(value, function (value, key) {
       return value !== undefined;
     });
   }
@@ -71,8 +73,8 @@ class OPay {
     this.privateKey = privateKey;
 
     this.base_url = {
-      sandbox: 'http://sandbox-internalapi.opayweb.com',
-      production: 'https://cashierapi.opayweb.com',
+      sandbox: 'http://sandbox-cashierapi.opayweb.com/api/v3/',
+      production: 'https://cashierapi.opayweb.com/api/v3/',
     };
 
     this.httpClientOptions = {

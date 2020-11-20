@@ -2,7 +2,6 @@
 
 This NodeJS SDK makes it easy to integrate your applications & interact with the [OPay](https://opayweb.com) APIs.
 
-
 ## Introduction
 
 To view OPay's API documentation, please [click here](https://documentation.opayweb.com).
@@ -12,11 +11,13 @@ Please note that you will need your public key, private/secret key and your merc
 ## OPay Services exposed
 
 #### Checkout (Collect payment):
+
 - Initializing a Transaction
 - Checking status of a Transaction
 - Closing a transaction
 
 #### Transfers (Send money):
+
 - Transfer to User Wallet
 - Transfer to Merchant Wallet
 - Transfer to Bank
@@ -26,6 +27,7 @@ Please note that you will need your public key, private/secret key and your merc
 - Bank Transfer Status
 
 #### Inquiry (Check balance, Validate User/Merchant & Bank Account Number)
+
 - Validate OPay User
 - Validate OPay Merchant
 - Query Balance
@@ -34,17 +36,20 @@ Please note that you will need your public key, private/secret key and your merc
 ## Getting Started
 
 ### Installing SDK
-``` npm install opay ```
+
+`npm install opay`
 
 ### Setup & Usage
+
 ```javascript
 const OPay = require('opay-node');
 
 const public_key = "OPAYPUB16057006237420.047574601637614955";
+const secret_key = "";
 const environment = process.env.NODE_ENV;
 const merchantId = "256620111818015";
 
-const opay = new OPay(public_key, merchantId, environment);
+const opay = new OPay(public_key,"", merchantId, environment);
 
 //Initialize transaction
 const initializeTransaction = () => {
@@ -63,7 +68,7 @@ const initializeTransaction = () => {
 		});
 	// do something with body
 	}catch(e){
-		// do something with error	
+		// do something with error
 	}
 }
 
@@ -78,11 +83,10 @@ const bankList = () => {
 }
 ```
 
-
 # Contributions
 
 This project is open-sourced, thus we encourage other developers to contribute and help improve it. To get started please:
 
 1. Fork this repo
-2. Create your feature branch (``` git checkout -b your-feature-branch ```)
+2. Create your feature branch (`git checkout -b your-feature-branch`)
 3. Off you go!

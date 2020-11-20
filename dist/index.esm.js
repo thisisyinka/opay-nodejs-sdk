@@ -1,5 +1,7 @@
 import got from 'got';
 import _isEmpty from 'lodash.isempty';
+import isObject from 'lodash.isobject';
+import some from 'lodash.some';
 import alphabetizeObjectKeys from 'alphabetize-object-keys';
 import sortBy from 'lodash.sortby';
 import getKeys from 'lodash.keys';
@@ -322,8 +324,8 @@ const { generatePrivateKey: generatePrivateKey$1, getClientBody: getClientBody$1
 const endpoints = Object.assign({}, checkout, inquiry, transfers);
 
 const isEmpty = (value, defined) => {
-  if (defined && _.isObject(value)) {
-    return !_.some(value, function (value, key) {
+  if (defined && isObject(value)) {
+    return !some(value, function (value, key) {
       return value !== undefined;
     });
   }
@@ -381,8 +383,8 @@ class OPay {
     this.privateKey = privateKey;
 
     this.base_url = {
-      sandbox: 'http://sandbox-internalapi.opayweb.com',
-      production: 'https://cashierapi.opayweb.com',
+      sandbox: 'http://sandbox-cashierapi.opayweb.com/api/v3/',
+      production: 'https://cashierapi.opayweb.com/api/v3/',
     };
 
     this.httpClientOptions = {
@@ -435,7 +437,7 @@ for (let endpoint in endpoints) {
 
 var OPay_1 = OPay;
 
-OPay_1.prototype.version = '1.0.0';
+OPay_1.prototype.version = '1.0.2';
 
 var opayNodejsSdk = OPay_1;
 
