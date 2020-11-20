@@ -1,6 +1,6 @@
 'use strict';
 const got = require('got');
-const _ = require('lodash');
+const _isEmpty = require('lodash.isempty');
 const alphabetizeObjectKeys = require('alphabetize-object-keys');
 
 const checkout = require('../apis/checkout');
@@ -11,21 +11,14 @@ const { generatePrivateKey, getClientBody } = require('../lib/utils');
 
 const endpoints = Object.assign({}, checkout, inquiry, transfers);
 
-_.mixin(
-  (function () {
-    var _isEmpty = _.isEmpty;
-    return {
-      isEmpty: function (value, defined) {
-        if (defined && _.isObject(value)) {
-          return !_.some(value, function (value, key) {
-            return value !== undefined;
-          });
-        }
-        return _isEmpty(value);
-      },
-    };
-  })(),
-);
+const isEmpty = (value, defined) => {
+  if (defined && _.isObject(value)) {
+    return !_.some(value, function (value, key) {
+      return value !== undefined;
+    });
+  }
+  return _isEmpty(value);
+};
 
 const createApiFunction = (config) => {
   let customConfig = { headers: {} };
@@ -44,7 +37,7 @@ const createApiFunction = (config) => {
         throw new TypeError('Argument: [ params(s) ] Should Be An Object Literal');
       }
 
-      if (!_.isEmpty(inputs, true)) {
+      if (!isEmpty(inputs, true)) {
         const body = getClientBody(config, alphabetizeObjectKeys(inputs));
         payload = alphabetizeObjectKeys(body);
       } else {

@@ -22,7 +22,11 @@
   "dependencies": {
     "alphabetize-object-keys": "^3.0.0",
     "got": "^11.8.0",
-    "lodash": "^4.17.20"
+    "lodash": "^4.17.20",
+    "lodash.foreach": "^4.5.0",
+    "lodash.isempty": "^4.4.0",
+    "lodash.keys": "^4.2.0",
+    "lodash.sortby": "^4.7.0"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^16.0.0",
