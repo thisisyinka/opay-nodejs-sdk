@@ -78,8 +78,8 @@ class OPay {
     this.privateKey = privateKey;
 
     this.base_url = {
-      sandbox: 'http://sandbox.cashierapi.operapay.com/api/v3/',
-      production: 'https://cashierapi.operapay.com/api/v3/',
+      sandbox: 'http://sandbox-internalapi.opayweb.com',
+      production: 'https://cashierapi.opayweb.com',
     };
 
     this.httpClientOptions = {
