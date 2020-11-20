@@ -36,8 +36,53 @@ Please note that you will need your public key, private/secret key and your merc
 ### Installing SDK
 ``` npm install opay ```
 
-### Usage Examples
+### Setup & Usage
 ```javascript
-const OPay = require('opay');
-const opay = new OPay(publicKey,  privateKey,  merchantID, appEnv =  'development');
+const OPay = require('opay-node');
+
+const public_key = "OPAYPUB16057006237420.047574601637614955";
+const environment = process.env.NODE_ENV;
+const merchantId = "256620111818015";
+
+const opay = new OPay(public_key, merchantId, environment);
+
+//Initialize transaction
+const initializeTransaction = () => {
+	try {
+		const { body } = await opay.initializeTransaction({
+			reference: "test_20191123132233",
+		    mchShortName: "Jerry's shop",
+		    productName: "Apple AirPods Pro",
+		    productDesc: "The best wireless earphone in history",
+		    userPhone: "+2349876543210",
+		    userRequestIp: "123.123.123.123",
+		    amount: "100",
+		    callbackUrl: "https://you.domain.com/callbackUrl",
+		    returnUrl: "https://you.domain.com/returnUrl",
+		    expireAt: "10"
+		});
+	// do something with body
+	}catch(e){
+		// do something with error	
+	}
+}
+
+// List of banks
+const bankList = () => {
+	try{
+		const { body } = await opay.getBanks();
+		// do something with body
+	} catch(e) {
+		// do something with error
+	}
+}
 ```
+
+
+# Contributions
+
+This project is open-sourced, thus we encourage other developers to contribute and help improve it. To get started please:
+
+1. Fork this repo
+2. Create your feature branch (``` git co -b new-feature-branch ```)
+3. Off you go!
