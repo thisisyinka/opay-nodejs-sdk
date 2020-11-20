@@ -84,5 +84,5 @@ const bankList = () => {
 This project is open-sourced, thus we encourage other developers to contribute and help improve it. To get started please:
 
 1. Fork this repo
-2. Create your feature branch (``` git co -b new-feature-branch ```)
+2. Create your feature branch (``` git checkout -b your-feature-branch ```)
 3. Off you go!
