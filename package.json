@@ -1,15 +1,34 @@
 {
   "name": "opay-nodejs-sdk",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
   "repository": "git@github.com:thisisyinka/opay-nodejs-sdk.git",
   "author": "Layinka Jaji <layinkawebdev@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -c -w"
+  },
+  "files": [
+    "dist/*"
+  ],
+  "keywords": [
+    "opay",
+    "node",
+    "nodejs",
+    "sdk"
+  ],
   "dependencies": {
     "alphabetize-object-keys": "^3.0.0",
     "got": "^11.8.0",
-    "lodash": "^4.17.20",
-    "nodemon": "^2.0.6"
+    "lodash": "^4.17.20"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^16.0.0",
+    "@rollup/plugin-node-resolve": "^10.0.0",
+    "nodemon": "^2.0.6",
+    "rollup": "^2.33.3",
+    "rollup-plugin-visualizer": "^4.2.0"
+  }
 }
