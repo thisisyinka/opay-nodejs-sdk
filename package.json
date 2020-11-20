@@ -1,9 +1,12 @@
 {
-  "name": "opay-nodejs-sdk",
-  "version": "1.0.0",
+  "name": "opay-node",
+  "version": "1.0.1",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
-  "repository": "git@github.com:thisisyinka/opay-nodejs-sdk.git",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thisisyinka/opay-nodejs-sdk"
+  },
   "author": "Layinka Jaji <layinkawebdev@gmail.com>",
   "license": "MIT",
   "scripts": {
@@ -30,9 +33,13 @@
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^16.0.0",
-    "@rollup/plugin-node-resolve": "^10.0.0",
     "nodemon": "^2.0.6",
     "rollup": "^2.33.3",
     "rollup-plugin-visualizer": "^4.2.0"
-  }
+  },
+  "description": "This NodeJS SDK makes it easy to integrate your applications & interact with the [OPay](https://opayweb.com) APIs.",
+  "bugs": {
+    "url": "https://github.com/thisisyinka/opay-nodejs-sdk/issues"
+  },
+  "homepage": "https://github.com/thisisyinka/opay-nodejs-sdk#readme"
 }
